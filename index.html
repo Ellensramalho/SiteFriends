@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="icon" href="Ícones/Friends.png">
+    <link rel="icon" href="Ícones/Friends.png">
     <link rel="stylesheet" href="styles.css">
     <title>FRIENDS</title>
 </head>
+
 <body>
     <header class="header">
         <img class="logo" src="Ícones/Friends-logo.png" alt="Logo de Friends">
         <nav class="botoes">
-            <button class = "botao" onclick="location.href='index.html'">Home</button>
-            <button class = "botao" onclick="location.href='personagens.html'">Personagens</button>
-            <button class = "botao" onclick="location.href='galeria.html'">Galeria</button>
+            <button class="botao" onclick="location.href='index.html'">Home</button>
+            <button class="botao" onclick="location.href='personagens.html'">Personagens</button>
+            <button class="botao" onclick="location.href='galeria.html'">Galeria</button>
 
         </nav>
     </header>
     <div class="conteudo">
-        <img class="imagem-principal" src="./Imagens/Wallpaper1.jpg" alt="Imagem Central">
-
+        <div class="carrosel">
+            <img class="imagem ativo" src="./Imagens/Wallpaper1.jpg" alt="Imagem Central">
+            <img class="imagem" src="./Imagens/Wallpaper2.jpg" alt="Imagem Secundária">
+            <img class="imagem" src="./Imagens/Wallpaper3.jpg" alt="Imagem Terciária">
+        </div>
     </div>
+    <section class = "desenhos">
+        <h1 class ="titulo">Personagens em desenho</h1>
+        <img class ="desenho"src ="Imagens/Rachel.jpg" alt="Rachel em desenho">
+        <img class ="desenho"src ="Imagens/Monica.jpg" alt="Monica em desenho">
+        <img class ="desenho"src ="Imagens/Phoebe.jpg" alt="Phoebe em desenho">
+    </section>
+        <script>
+        let indice = 0;
+        const imagens = document.querySelectorAll(".carrosel .imagem");
+
+        function mostrarSlide(n) {
+            imagens.forEach(img => img.classList.remove("ativo"));
+            indice = (n + imagens.length) % imagens.length;
+            imagens[indice].classList.add("ativo");
+        }
+        setInterval(() => {
+            mostrarSlide(indice + 1);
+        }, 4000);
+    </script>
+
+
 
 </body>
+
 </html>
