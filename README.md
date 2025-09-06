@@ -3,5 +3,7 @@ O “Site Friends” é um projeto pessoal que estou desenvolvendo para aplicar 
 Ferramentas utilizadas até o momento:
 
 HTML
+
 CSS
+
 JavaScript
